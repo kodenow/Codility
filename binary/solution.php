@@ -2,7 +2,6 @@
 function solution($N) {
     // write your code in PHP7.0
     $bin = decbin($N);
-    var_dump($bin);
     $countOnes= substr_count($bin,"1"); //count occurence of 1s
     if($countOnes < 2) return 0;
     $lastPos = strripos($bin,"1"); // get the position of the last occurence of 1
@@ -16,8 +15,12 @@ function solution($N) {
         unset($exploded[0]);
     }
 
-    //to reindex the array using array_values, Note that when you use unset() 
-    //the array keys won’t change sample: [ 0 => 'a' ,1 => 'b' , 2='c']. result is [1 => 'b' , 2='c'], note that it now start with index 1
+    /*
+    to reindex the array using array_values, Note that when you use unset() 
+    the array keys won’t change sample: $array = [ 0 => 'a' ,1 => 'b' , 2='c'];
+    unset($array[0]). 
+    result is [1 => 'b' , 2='c'], note that it now start with index 1 
+    */
     $exploded = array_values($exploded); 
     // if($exploded[array_key_last($exploded)] == "") unset($exploded[array_key_last($exploded)]); this solution works only if PHP VERSION > 7.0
     if($exploded[count($exploded) -1] == "") unset($exploded[count($exploded) -1]);
