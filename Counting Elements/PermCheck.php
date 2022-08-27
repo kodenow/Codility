@@ -2,6 +2,8 @@
 /* 
 Performed by: https://github.com/kriscondev/
 
+For more or some other solutions, refer to this guy right here https://www.alessiocantarella.it/codility/
+
 Detected time complexity: O(N) or O(N * log(N))
 Correctness 100%
 Performance 100%
