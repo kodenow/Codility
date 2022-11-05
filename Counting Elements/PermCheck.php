@@ -8,6 +8,7 @@ Detected time complexity: O(N) or O(N * log(N))
 Correctness 100%
 Performance 100%
 Task score 100%
+TOTAL SCORE 100%
 
 A non-empty array A consisting of N integers is given.
 

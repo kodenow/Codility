@@ -12,7 +12,7 @@ TOTAL SCORE 66%
 */
 function solution($n, $array){
     for ($i=0; $i < $n; $i++) { 
-        $maxCounter[] = 0; //setting initial value of zeroes 
+        $maxCounter[] = 0; //setting initial to zeroes 
     }
     
     foreach($array as $k => $val){
