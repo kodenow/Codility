@@ -1,12 +1,10 @@
 <?php
-
 /* 
-Performed by: https://github.com/kriscondev/
+Performed by: https://github.com/kodenow/
 Correctness 100%
 Performance 100%
 Task score 100%
 Detected time complexity: O(N)
-
 */
 
 function solution($arrays){

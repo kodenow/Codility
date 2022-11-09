@@ -2,7 +2,7 @@
 /* 
 Performed by: https://github.com/kodenow/
 Correctness 100%
-Performance 100%
+Performance not assessed
 Task score 100%
 TOTAL SCORE 100%
 
@@ -43,29 +43,28 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 */
-function solution($A, $K) {
-    // write your code in PHP7.0
-    
-    $iteration = 1;
-    $count = count($A);
-    var_dump($A);
-    while ($iteration <= $K) {
-        $rotated = rotate($A,$count);
-        $A = $rotated;
-        var_dump($rotated);
-        if($iteration == $K) return $rotated;
-        $iteration++;
+function solution($array, $r) {
+    if(count($array) < 1 || $r < 1) return $array;
+
+    if($r > count($array)){ //because given ([1,2,3,4],1) or ([1,2,3,4],5) or ([1,2,3,4],9) will return the same result as ([1,2,3,4],1)
+        $x = floor($r/count($array)); //e.g ([1,2,3,4],9) ====> floor(9/4) = 2
+        $x = $x * count($array); //2 * 4 = 8
+        $r = $r - $x; //9-8 = 1
     }
+    
+    var_dump($r);
+    $tail = array_slice($array,-$r, $r);
+    print_r($tail);
 
+    $head = array_slice($array,0,count($array) - $r);
+    print_r($head);
+
+    $merge = array_merge($tail,$head);
+    print_r($merge);
+    return $merge;
 }
 
-function rotate($A, $count){
-        $lastIndexVal = $A[$count - 1];
-        unset($A[$count - 1]);
-        array_unshift($A,$lastIndexVal); //move $lastIndexVal to first position
-        return $A;
-        # code...
-}
 
-
-solution([3, 8, 9, 7, 6],3);
+solution([1,2,3,4],9);
+// solution([1,2,3,4],4);
+// solution([1, 1, 2, 3, 5],42);
